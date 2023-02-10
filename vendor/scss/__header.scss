@@ -1,0 +1,333 @@
+.header {
+    background-color: $color-secondary;
+    width: 100%;
+    padding-bottom: 20px;
+}
+// ************************* Nav *************************************
+.nav {
+    @include d-flex(flex-end);
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .header__logo{
+        position: relative;
+        left: 0;
+        width: 100%;
+        .header__logo-img {
+            width: 202px;
+        }
+    }
+    .header__nav {
+        position: absolute;
+        top: 0;
+        padding-top: 50px;
+        right: -500px;
+        display: none;
+        text-align: center;
+        background-color: $color-darkBlue;
+        width: 270px;
+        height: 100vh;
+        transition: all 0.3s ease-in-out;
+        .header__menu {
+            margin-bottom: 3rem;
+        }
+        .header__list-item {
+            margin-top: 15px;
+        }
+        .header__list-item {
+            a {
+                color: $color-white;
+                display: inline-block;
+                width: 100%;
+                padding: 20px 0;
+                &:hover {
+                    background-color: $color-white;
+                    color: $color-gray;
+                }
+            }
+        }
+        .header__btn {
+            button {
+                padding: 20px 30px;
+                margin-top: 1rem;
+                width: 80%;
+                border: none;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    .header__trigger {
+        width: 40px;
+        position: absolute;
+        right: 20px;
+        cursor: pointer;
+        z-index: 999;
+    }
+    .header__trigger.on {
+        div {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+        }
+    }
+    .header__trigger.on {
+        div {
+            &:nth-child(2) {
+                opacity: 0;
+            }
+        }
+    }
+    .header__trigger.on {
+        div {
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(9px, -9px);
+            }
+        }
+    }
+    .header__trigger {
+        div {
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            background-color: $color-white;
+            margin-top: 5px;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+    .header__trigger.on + .header__nav {
+        right: 0px;
+        display: flex;
+        flex-direction: column;
+        transition: all 1s ease;
+    }
+}
+
+.header__btn--active {
+    background-color: $color-orange;
+    color: $color-white;
+}
+// ************************* Header Sections *************************
+
+.header__section--right {
+    @include d-flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-top: 149px;
+    .header__msg {
+        padding: 11px 30px;
+        width: 300px;
+        background-color: $color-white;
+        box-shadow: 2px 2px 12px rgba(38, 40, 82, 0.1);
+        border-radius: 10px;
+        font-size: 20px;
+    }
+    .header__title {
+        clear: both;
+        font-weight: 800;
+        font-size: 64px;
+        line-height: 81px;
+        letter-spacing: 0.02em;
+        color: $color-white;
+        margin: 18px 0 80px 0;
+    }
+    .header__line {
+        width: 65px;
+        border-radius: 10px;
+        border: 6px solid #3adad9;
+        margin-bottom: 40px;
+    }
+    .header__text {
+        font-size: 30px;
+        line-height: 48px;
+        letter-spacing: 0.02em;
+        color: $color-white;
+        margin-bottom: 40px;
+    }
+    .header__section-btn {
+        padding: 18px 46px;
+        color: #000;
+        border-radius: 10px;
+        border: none;
+        font-size: 26px;
+        margin-bottom: 100px;
+    }
+}
+
+.header__section--left {
+    position: relative;
+    @include d-flex;
+    // flex-direction: column;
+    gap: 35px;
+    .header__comments-lusy .lusy,
+    .header__comments-mark .mark {
+        position: relative;
+        width: 190px;
+        height: 190px;
+        background-image: url("../../assets/images/Ellipse\ 5.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 7px;
+        margin: 10px auto;
+    }
+    .lusy__img,
+    .mark__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 170px;
+        height: 170px;
+        background-color: #e9eaf6;
+        // padding: 10px;
+        border-radius: 50%;
+    }
+    .comment__name {
+        @include d-flex;
+        width: 103px;
+        height: 37px;
+        background-color: #fafafa;
+        border-radius: 34px;
+        position: absolute;
+        bottom: 12px;
+        left: -17px;
+    }
+    .header__comment {
+        width: 390px;
+        height: 148px;
+        box-shadow: 0px 23.0135px 12.897px rgb(0 0 0 / 5%);
+        border-radius: 18px;
+        background-color: $color-white;
+        padding: 14px 10px 14px 30px;
+        div:nth-child(1) {
+            float: right;
+            background-color: #3adad9;
+            color: $color-white;
+            font-size: 19.9px;
+            padding: 3.5px 16.5px;
+            border-radius: 7px;
+        }
+        div:nth-child(2) {
+            color: #6c71a1;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        p {
+            color: #2b3377;
+            font-size: 21px;
+            font-weight: 700;
+            margin: 20px 0;
+            width: 297px;
+        }
+        .star {
+            width: 22.27px;
+            height: 22.12px;
+            cursor: pointer;
+        }
+    }
+    .header__comments-mark {
+        // margin-top: 20px;
+        .header__comment div:nth-child(1) {
+            background-color: #fd9b79;
+        }
+    }
+}
+
+// ************************* Media Query ******************************
+@media (min-width: 1230px) {
+    .header {
+        background: none;
+        background-image: url('../../assets/images/bg-header.png');
+        background-repeat: no-repeat;
+        .nav {
+            padding: 2rem;
+            .header__logo{
+                width: 50%;
+            }
+            .header__trigger {
+                display: none;
+            }
+            justify-content: space-between;
+            .header__nav {
+                position: static;
+                background: none;
+                right: 0;
+                padding: 0;
+                transition: all 0.3s ease-in-out;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 65%;
+                height: 50px;
+                .header__menu {
+                    @include d-flex;
+                    margin: 0;
+                }
+                .header__btn button {
+                    width: 100px;
+                    padding: 15px 26px;
+                    background: none;
+                    color: #757575;
+                    font-size: 1rem;
+                }
+                button.header__btn--active {
+                    width: 110px;
+                    background-color: $color-orange;
+                    color: #000;
+                }
+                .header__list-item {
+                    margin-left: 40px;
+                    a {
+                        &:hover {
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+        .header__trigger.on + .header__nav{
+            flex-direction: row
+        }
+        .header__section{
+            @include d-flex(flex-start , );
+            .header__section--right{
+                margin-left: 174px;
+                width: 50%;
+                align-items: flex-start;
+                text-align: left;
+            }
+            .header__section--left{
+                width: 50%;
+                display: block;    
+                .header__comments-lusy{
+                    @include d-flex (flex-start ,);
+                    .lusy{
+                        margin: 10px 28px;
+                    }
+                
+                }       
+                .header__comments-mark{
+                    @include d-flex(flex-start ,);
+                }     
+                .mark{
+                    margin: 10px 28px;
+                    order: 2;
+                    .comment__name{
+                        top: 40px;
+                        left: 128px;
+                        height: 26px;
+                        color: #279E73;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width : 860px ) {
+   .header__section--left{
+    flex-direction: column;
+   }
+}
